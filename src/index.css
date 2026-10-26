@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+@import './styles/theme.css';
+
+@layer base {
+  body {
+    @apply bg-off-white text-brown-deep font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-serif;
+  }
+}
