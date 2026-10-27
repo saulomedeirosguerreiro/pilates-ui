@@ -1,7 +1,5 @@
-import instructor1 from '../../assets/images/photos/instructor-1.jpg'
-import instructor2 from '../../assets/images/photos/instructor-2.jpg'
-import instructor3 from '../../assets/images/photos/instructor-3.jpg'
-import instructor4 from '../../assets/images/photos/instructor-4.jpg'
+import instructorAldiceia from '../../assets/images/photos/instructor-aldiceia.jpg'
+import instructorBruna from '../../assets/images/photos/instructor-bruna.jpg'
 import { instructorsContent } from '../../content/instructors'
 import { MagneticButton } from '../motion/MagneticButton'
 import { Reveal } from '../motion/Reveal'
@@ -10,7 +8,10 @@ import { LinkButton } from '../ui/Button'
 import { Container } from '../ui/Container'
 import { SectionHeading } from '../ui/SectionHeading'
 
-const IMAGES = [instructor1, instructor2, instructor3, instructor4]
+const IMAGES = [instructorAldiceia, instructorBruna]
+// As fotos são paisagem e recortadas em retrato — ajusta o foco horizontal
+// para manter cada instrutora enquadrada (Aldiceia aparece à esquerda da foto original).
+const IMAGE_POSITION = ['object-[20%_center]', 'object-center']
 
 export function Instructors() {
   return (
@@ -30,7 +31,7 @@ export function Instructors() {
           </Reveal>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2">
           {instructorsContent.map((instructor, index) => (
             <Reveal
               key={instructor.index}
@@ -45,6 +46,7 @@ export function Instructors() {
                 hoverZoom
                 grayscale
                 className="absolute inset-0 h-full w-full"
+                imgClassName={IMAGE_POSITION[index]}
               />
               <div className="from-brown-deep/90 pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent" />
 

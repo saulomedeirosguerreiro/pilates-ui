@@ -1,6 +1,3 @@
-/**
- * Conteúdo de exemplo — substituir pelos instrutores reais do estúdio antes do lançamento.
- */
 export type InstructorItem = {
   index: string
   name: string
@@ -8,8 +5,14 @@ export type InstructorItem = {
 }
 
 export const instructorsContent: InstructorItem[] = [
-  { index: '01', name: 'Camila', imageAlt: 'Retrato da instrutora Camila' },
-  { index: '02', name: 'André', imageAlt: 'Retrato do instrutor André' },
-  { index: '03', name: 'Beatriz', imageAlt: 'Retrato da instrutora Beatriz' },
-  { index: '04', name: 'Rafael', imageAlt: 'Retrato do instrutor Rafael' },
+  {
+    index: '01',
+    name: 'Aldiceia Nascimento',
+    imageAlt: 'Retrato da instrutora Aldiceia Nascimento em estúdio de pilates',
+  },
+  {
+    index: '02',
+    name: 'Bruna Evelly',
+    imageAlt: 'Retrato da instrutora Bruna Evelly em estúdio de pilates',
+  },
 ]
