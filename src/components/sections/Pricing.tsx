@@ -58,7 +58,11 @@ export function Pricing() {
                   </p>
                 </div>
 
-                <LinkButton variant={plan.highlighted ? 'primary' : 'light'} href="#" className="w-full">
+                <LinkButton
+                  variant={plan.highlighted ? 'primary' : 'light'}
+                  href={`/cadastro?plano=${plan.id}`}
+                  className="w-full"
+                >
                   Começar →
                 </LinkButton>
 

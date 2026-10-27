@@ -6,10 +6,10 @@ import { LinkButton } from '../ui/Button'
 import { Container } from '../ui/Container'
 
 const NAV_LINKS = [
-  { label: 'Início', href: '#inicio' },
-  { label: 'Aulas', href: '#aulas' },
-  { label: 'Instrutores', href: '#instrutores' },
-  { label: 'Planos', href: '#planos' },
+  { label: 'Início', href: '/#inicio' },
+  { label: 'Aulas', href: '/#aulas' },
+  { label: 'Instrutores', href: '/#instrutores' },
+  { label: 'Planos', href: '/#planos' },
 ]
 
 export function Header() {
@@ -38,7 +38,7 @@ export function Header() {
       className={`fixed inset-x-0 top-0 z-40 transition-colors motion-reduce:transition-none ${headerSurface}`}
     >
       <Container className="flex h-20 items-center justify-between">
-        <a href="#inicio" className="text-off-white font-serif text-xl font-medium">
+        <a href="/" className="text-off-white font-serif text-xl font-medium">
           {company.name}
         </a>
 
@@ -58,11 +58,11 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <a href="#planos" className="text-off-white/80 hover:text-off-white font-sans text-sm font-medium">
+          <a href="/#planos" className="text-off-white/80 hover:text-off-white font-sans text-sm font-medium">
             Entrar
           </a>
           <MagneticButton>
-            <LinkButton variant="light" href="#planos">
+            <LinkButton variant="light" href="/cadastro">
               Cadastrar
             </LinkButton>
           </MagneticButton>
@@ -102,7 +102,7 @@ export function Header() {
             <LinkButton
               variant="light"
               className="mt-2 w-full"
-              href="#planos"
+              href="/cadastro"
               onClick={() => setIsMenuOpen(false)}
             >
               Cadastrar

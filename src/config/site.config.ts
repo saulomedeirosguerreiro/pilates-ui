@@ -49,8 +49,8 @@ export const siteConfig: SiteConfig = {
     seatsTaken: 0,
   },
   links: {
-    terms: null,
-    privacyPolicy: null,
+    terms: '/termos',
+    privacyPolicy: '/privacidade',
   },
   social: {
     instagram: null,

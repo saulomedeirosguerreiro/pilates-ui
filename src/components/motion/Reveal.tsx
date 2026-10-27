@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 import { motion } from 'motion/react'
 import { DURATION, EASE, VIEWPORT_ONCE } from './constants'
 
-type RevealTag = 'div' | 'span' | 'h1' | 'h2' | 'h3' | 'p' | 'li' | 'ul'
+type RevealTag = 'div' | 'span' | 'h1' | 'h2' | 'h3' | 'p' | 'li' | 'ul' | 'fieldset'
 
 const TAGS: Record<RevealTag, (typeof motion)[RevealTag]> = {
   div: motion.div,
@@ -13,6 +13,7 @@ const TAGS: Record<RevealTag, (typeof motion)[RevealTag]> = {
   p: motion.p,
   li: motion.li,
   ul: motion.ul,
+  fieldset: motion.fieldset,
 }
 
 type RevealProps = {
