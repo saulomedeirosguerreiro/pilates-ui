@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { motion, useMotionValueEvent, useScroll } from 'motion/react'
 import { useLocation } from 'react-router'
 import { useSiteConfig } from '../../config/useSiteConfig'
-import { MagneticButton } from '../motion/MagneticButton'
 import { LinkButton } from '../ui/Button'
 import { Container } from '../ui/Container'
 
@@ -61,26 +60,22 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-6 md:flex">
           {isCadastroPage ? (
-            <MagneticButton>
-              <LinkButton variant="light" href="/entrar">
-                Entrar
-              </LinkButton>
-            </MagneticButton>
+            <LinkButton variant="light" href="/entrar">
+              Entrar
+            </LinkButton>
           ) : (
             <>
               <a
                 href="/entrar"
-                className="text-off-white/80 hover:text-off-white font-sans text-sm font-medium"
+                className="text-off-white hover:text-off-white/80 font-sans text-base font-semibold transition-colors motion-reduce:transition-none"
               >
                 Entrar
               </a>
-              <MagneticButton>
-                <LinkButton variant="light" href="/cadastro">
-                  Cadastrar
-                </LinkButton>
-              </MagneticButton>
+              <LinkButton variant="light" href="/cadastro">
+                Cadastrar
+              </LinkButton>
             </>
           )}
         </div>
