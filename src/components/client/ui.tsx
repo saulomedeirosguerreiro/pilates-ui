@@ -31,12 +31,8 @@ export function IndexChip({ children }: PropsWithChildren) {
   )
 }
 
-export function Badge({
-  children,
-  tone = 'accent',
-}: PropsWithChildren<{ tone?: 'accent' | 'sage' }>) {
-  const toneClasses =
-    tone === 'sage' ? 'bg-sage text-off-white' : 'bg-beige-light text-brown-deep'
+export function Badge({ children, tone = 'accent' }: PropsWithChildren<{ tone?: 'accent' | 'sage' }>) {
+  const toneClasses = tone === 'sage' ? 'bg-sage text-off-white' : 'bg-beige-light text-brown-deep'
 
   return (
     <span className={`inline-flex rounded-full px-3 py-1 font-sans text-xs font-semibold ${toneClasses}`}>
@@ -67,7 +63,7 @@ export function Avatar({ initials, size = 'md' }: { initials: string; size?: 'md
 
   return (
     <div
-      className={`bg-beige-light text-brown-deep font-serif flex flex-none items-center justify-center rounded-full font-semibold ${sizeClasses}`}
+      className={`bg-beige-light text-brown-deep flex flex-none items-center justify-center rounded-full font-serif font-semibold ${sizeClasses}`}
       aria-hidden="true"
     >
       {initials}
@@ -103,4 +99,3 @@ export function ToggleSwitch({
     </button>
   )
 }
-

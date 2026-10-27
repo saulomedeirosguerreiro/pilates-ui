@@ -121,40 +121,252 @@
     }
   ],
   "slots": [
-    { "id": 1, "category": "essencial", "date": "2026-10-29", "dayLabel": "Qui 29/10", "time": "07:00", "full": false },
-    { "id": 2, "category": "essencial", "date": "2026-10-29", "dayLabel": "Qui 29/10", "time": "18:00", "full": true },
-    { "id": 3, "category": "essencial", "date": "2026-10-30", "dayLabel": "Sex 30/10", "time": "07:00", "full": false },
-    { "id": 4, "category": "essencial", "date": "2026-10-30", "dayLabel": "Sex 30/10", "time": "12:00", "full": false },
-    { "id": 5, "category": "essencial", "date": "2026-10-31", "dayLabel": "Sáb 31/10", "time": "09:00", "full": false },
-    { "id": 6, "category": "essencial", "date": "2026-10-31", "dayLabel": "Sáb 31/10", "time": "11:00", "full": true },
-    { "id": 7, "category": "individual", "date": "2026-10-29", "dayLabel": "Qui 29/10", "time": "14:00", "full": false },
-    { "id": 8, "category": "individual", "date": "2026-10-30", "dayLabel": "Sex 30/10", "time": "09:00", "full": false },
-    { "id": 9, "category": "individual", "date": "2026-10-30", "dayLabel": "Sex 30/10", "time": "16:00", "full": true },
-    { "id": 10, "category": "individual", "date": "2026-11-02", "dayLabel": "Seg 02/11", "time": "10:00", "full": false },
-    { "id": 11, "category": "grupo", "date": "2026-10-29", "dayLabel": "Qui 29/10", "time": "18:00", "full": false },
-    { "id": 12, "category": "grupo", "date": "2026-10-30", "dayLabel": "Sex 30/10", "time": "07:00", "full": true },
-    { "id": 13, "category": "grupo", "date": "2026-10-30", "dayLabel": "Sex 30/10", "time": "18:00", "full": false },
-    { "id": 14, "category": "grupo", "date": "2026-10-31", "dayLabel": "Sáb 31/10", "time": "10:00", "full": false },
-    { "id": 15, "category": "grupo", "date": "2026-11-03", "dayLabel": "Ter 03/11", "time": "09:00", "full": false },
-    { "id": 16, "category": "grupo", "date": "2026-11-03", "dayLabel": "Ter 03/11", "time": "18:00", "full": true },
-    { "id": 17, "category": "precisao", "date": "2026-10-30", "dayLabel": "Sex 30/10", "time": "08:00", "full": false },
-    { "id": 18, "category": "precisao", "date": "2026-10-31", "dayLabel": "Sáb 31/10", "time": "10:00", "full": false },
-    { "id": 19, "category": "precisao", "date": "2026-11-02", "dayLabel": "Seg 02/11", "time": "09:00", "full": true },
-    { "id": 20, "category": "precisao", "date": "2026-11-03", "dayLabel": "Ter 03/11", "time": "08:00", "full": false }
+    {
+      "id": 1,
+      "category": "essencial",
+      "date": "2026-10-29",
+      "dayLabel": "Qui 29/10",
+      "time": "07:00",
+      "full": false
+    },
+    {
+      "id": 2,
+      "category": "essencial",
+      "date": "2026-10-29",
+      "dayLabel": "Qui 29/10",
+      "time": "18:00",
+      "full": true
+    },
+    {
+      "id": 3,
+      "category": "essencial",
+      "date": "2026-10-30",
+      "dayLabel": "Sex 30/10",
+      "time": "07:00",
+      "full": false
+    },
+    {
+      "id": 4,
+      "category": "essencial",
+      "date": "2026-10-30",
+      "dayLabel": "Sex 30/10",
+      "time": "12:00",
+      "full": false
+    },
+    {
+      "id": 5,
+      "category": "essencial",
+      "date": "2026-10-31",
+      "dayLabel": "Sáb 31/10",
+      "time": "09:00",
+      "full": false
+    },
+    {
+      "id": 6,
+      "category": "essencial",
+      "date": "2026-10-31",
+      "dayLabel": "Sáb 31/10",
+      "time": "11:00",
+      "full": true
+    },
+    {
+      "id": 7,
+      "category": "individual",
+      "date": "2026-10-29",
+      "dayLabel": "Qui 29/10",
+      "time": "14:00",
+      "full": false
+    },
+    {
+      "id": 8,
+      "category": "individual",
+      "date": "2026-10-30",
+      "dayLabel": "Sex 30/10",
+      "time": "09:00",
+      "full": false
+    },
+    {
+      "id": 9,
+      "category": "individual",
+      "date": "2026-10-30",
+      "dayLabel": "Sex 30/10",
+      "time": "16:00",
+      "full": true
+    },
+    {
+      "id": 10,
+      "category": "individual",
+      "date": "2026-11-02",
+      "dayLabel": "Seg 02/11",
+      "time": "10:00",
+      "full": false
+    },
+    {
+      "id": 11,
+      "category": "grupo",
+      "date": "2026-10-29",
+      "dayLabel": "Qui 29/10",
+      "time": "18:00",
+      "full": false
+    },
+    {
+      "id": 12,
+      "category": "grupo",
+      "date": "2026-10-30",
+      "dayLabel": "Sex 30/10",
+      "time": "07:00",
+      "full": true
+    },
+    {
+      "id": 13,
+      "category": "grupo",
+      "date": "2026-10-30",
+      "dayLabel": "Sex 30/10",
+      "time": "18:00",
+      "full": false
+    },
+    {
+      "id": 14,
+      "category": "grupo",
+      "date": "2026-10-31",
+      "dayLabel": "Sáb 31/10",
+      "time": "10:00",
+      "full": false
+    },
+    {
+      "id": 15,
+      "category": "grupo",
+      "date": "2026-11-03",
+      "dayLabel": "Ter 03/11",
+      "time": "09:00",
+      "full": false
+    },
+    {
+      "id": 16,
+      "category": "grupo",
+      "date": "2026-11-03",
+      "dayLabel": "Ter 03/11",
+      "time": "18:00",
+      "full": true
+    },
+    {
+      "id": 17,
+      "category": "precisao",
+      "date": "2026-10-30",
+      "dayLabel": "Sex 30/10",
+      "time": "08:00",
+      "full": false
+    },
+    {
+      "id": 18,
+      "category": "precisao",
+      "date": "2026-10-31",
+      "dayLabel": "Sáb 31/10",
+      "time": "10:00",
+      "full": false
+    },
+    {
+      "id": 19,
+      "category": "precisao",
+      "date": "2026-11-02",
+      "dayLabel": "Seg 02/11",
+      "time": "09:00",
+      "full": true
+    },
+    {
+      "id": 20,
+      "category": "precisao",
+      "date": "2026-11-03",
+      "dayLabel": "Ter 03/11",
+      "time": "08:00",
+      "full": false
+    }
   ],
   "videos": [
-    { "id": 1, "category": "essencial", "title": "Pilates para iniciantes: os 10 movimentos essenciais", "channel": "Move with Nicole", "duration": "18 min" },
-    { "id": 2, "category": "essencial", "title": "Respiração e postura: a base do pilates", "channel": "Blogilates", "duration": "12 min" },
-    { "id": 3, "category": "essencial", "title": "Fortalecimento do core em 15 minutos", "channel": "POP Pilates", "duration": "15 min" },
-    { "id": 4, "category": "individual", "title": "Alongamento profundo para a coluna", "channel": "Move with Nicole", "duration": "22 min" },
-    { "id": 5, "category": "individual", "title": "Mobilidade de quadril para iniciantes", "channel": "Blogilates", "duration": "14 min" },
-    { "id": 6, "category": "individual", "title": "Equilíbrio e controle: sessão individual guiada", "channel": "POP Pilates", "duration": "20 min" },
-    { "id": 7, "category": "grupo", "title": "Treino completo em grupo — nível iniciante", "channel": "POP Pilates", "duration": "28 min" },
-    { "id": 8, "category": "grupo", "title": "Pilates energizante para começar o dia", "channel": "Move with Nicole", "duration": "20 min" },
-    { "id": 9, "category": "grupo", "title": "Conexão e ritmo: aula em grupo de baixo impacto", "channel": "Blogilates", "duration": "24 min" },
-    { "id": 10, "category": "precisao", "title": "Introdução ao Reformer: o que esperar da primeira aula", "channel": "Blogilates", "duration": "10 min" },
-    { "id": 11, "category": "precisao", "title": "Reformer para iniciantes: técnica e segurança", "channel": "POP Pilates", "duration": "25 min" },
-    { "id": 12, "category": "precisao", "title": "Precisão de movimento no Reformer", "channel": "Move with Nicole", "duration": "19 min" }
+    {
+      "id": 1,
+      "category": "essencial",
+      "title": "Pilates para iniciantes: os 10 movimentos essenciais",
+      "channel": "Pilates com Camila",
+      "duration": "18 min"
+    },
+    {
+      "id": 2,
+      "category": "essencial",
+      "title": "Respiração e postura: a base do pilates",
+      "channel": "Blog do Pilates",
+      "duration": "12 min"
+    },
+    {
+      "id": 3,
+      "category": "essencial",
+      "title": "Fortalecimento do core em 15 minutos",
+      "channel": "Pilates em Foco",
+      "duration": "15 min"
+    },
+    {
+      "id": 4,
+      "category": "individual",
+      "title": "Alongamento profundo para a coluna",
+      "channel": "Pilates com Camila",
+      "duration": "22 min"
+    },
+    {
+      "id": 5,
+      "category": "individual",
+      "title": "Mobilidade de quadril para iniciantes",
+      "channel": "Blog do Pilates",
+      "duration": "14 min"
+    },
+    {
+      "id": 6,
+      "category": "individual",
+      "title": "Equilíbrio e controle: sessão individual guiada",
+      "channel": "Pilates em Foco",
+      "duration": "20 min"
+    },
+    {
+      "id": 7,
+      "category": "grupo",
+      "title": "Treino completo em grupo — nível iniciante",
+      "channel": "Pilates em Foco",
+      "duration": "28 min"
+    },
+    {
+      "id": 8,
+      "category": "grupo",
+      "title": "Pilates energizante para começar o dia",
+      "channel": "Pilates com Camila",
+      "duration": "20 min"
+    },
+    {
+      "id": 9,
+      "category": "grupo",
+      "title": "Conexão e ritmo: aula em grupo de baixo impacto",
+      "channel": "Blog do Pilates",
+      "duration": "24 min"
+    },
+    {
+      "id": 10,
+      "category": "precisao",
+      "title": "Introdução ao Reformer: o que esperar da primeira aula",
+      "channel": "Blog do Pilates",
+      "duration": "10 min"
+    },
+    {
+      "id": 11,
+      "category": "precisao",
+      "title": "Reformer para iniciantes: técnica e segurança",
+      "channel": "Pilates em Foco",
+      "duration": "25 min"
+    },
+    {
+      "id": 12,
+      "category": "precisao",
+      "title": "Precisão de movimento no Reformer",
+      "channel": "Pilates com Camila",
+      "duration": "19 min"
+    }
   ],
   "watchProgress": [
     { "id": 1, "userId": 1, "videoId": 1, "progress": 65 },

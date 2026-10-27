@@ -25,7 +25,9 @@ export function ClientPlanPage() {
   return (
     <Container className="flex flex-col gap-6 py-12">
       <div>
-        <span className="text-sage font-sans text-sm font-semibold tracking-[0.18em] uppercase">Assinatura</span>
+        <span className="text-sage font-sans text-sm font-semibold tracking-[0.18em] uppercase">
+          Assinatura
+        </span>
         <h1 className="font-serif text-3xl">Meu Plano</h1>
         <TitleRule />
       </div>
@@ -56,7 +58,9 @@ export function ClientPlanPage() {
             </div>
             <div className="border-brown-deep/10 flex min-w-[220px] flex-1 flex-col gap-1.5 border-l pl-10">
               <p className="text-brown-warm/70 font-sans text-sm">Próxima cobrança</p>
-              <p className="font-sans text-base font-semibold">{formatLongDate(subscription.nextBillingDate)}</p>
+              <p className="font-sans text-base font-semibold">
+                {formatLongDate(subscription.nextBillingDate)}
+              </p>
               <p className="text-brown-warm/70 mt-2.5 font-sans text-sm">Forma de pagamento</p>
               <p className="font-sans text-base">{subscription.paymentMethodLabel}</p>
               <button
@@ -65,7 +69,10 @@ export function ClientPlanPage() {
               >
                 Atualizar forma de pagamento
               </button>
-              <button type="button" className="text-brown-warm/60 hover:text-brown-deep mt-1 self-start font-sans text-sm">
+              <button
+                type="button"
+                className="text-brown-warm/60 hover:text-brown-deep mt-1 self-start font-sans text-sm"
+              >
                 Cancelar assinatura
               </button>
             </div>
@@ -102,17 +109,27 @@ export function ClientPlanPage() {
                 ))}
               </ul>
               {isCurrent && (
-                <button type="button" disabled className="bg-brown-deep/6 text-brown-deep w-full rounded-full px-5 py-2.5 font-sans text-sm font-medium opacity-60">
+                <button
+                  type="button"
+                  disabled
+                  className="bg-brown-deep/6 text-brown-deep w-full rounded-full px-5 py-2.5 font-sans text-sm font-medium opacity-60"
+                >
                   Seu plano atual
                 </button>
               )}
               {!isCurrent && isUpgrade && (
-                <button type="button" className="bg-brown-deep text-off-white hover:bg-brown-warm w-full rounded-full px-5 py-2.5 font-sans text-sm font-medium transition-colors motion-reduce:transition-none">
+                <button
+                  type="button"
+                  className="bg-brown-deep text-off-white hover:bg-brown-warm w-full rounded-full px-5 py-2.5 font-sans text-sm font-medium transition-colors motion-reduce:transition-none"
+                >
                   Fazer upgrade
                 </button>
               )}
               {!isCurrent && isDowngrade && (
-                <button type="button" className="border-brown-deep text-brown-deep hover:bg-brown-deep hover:text-off-white w-full rounded-full border px-5 py-2.5 font-sans text-sm font-medium transition-colors motion-reduce:transition-none">
+                <button
+                  type="button"
+                  className="border-brown-deep text-brown-deep hover:bg-brown-deep hover:text-off-white w-full rounded-full border px-5 py-2.5 font-sans text-sm font-medium transition-colors motion-reduce:transition-none"
+                >
                   Fazer downgrade
                 </button>
               )}
@@ -125,7 +142,7 @@ export function ClientPlanPage() {
       <div className="overflow-x-auto">
         <table className="w-full font-sans text-sm">
           <thead>
-            <tr className="border-brown-deep/10 border-b text-xs tracking-wide text-brown-warm/70 uppercase">
+            <tr className="border-brown-deep/10 text-brown-warm/70 border-b text-xs tracking-wide uppercase">
               <th className="px-4 py-3 text-left">Data</th>
               <th className="px-4 py-3 text-left">Descrição</th>
               <th className="px-4 py-3 text-left">Valor</th>

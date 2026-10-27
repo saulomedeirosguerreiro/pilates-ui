@@ -39,8 +39,12 @@ export function ClientHomePage() {
       setNextBooking(upcoming[0] ?? null)
 
       const [firstProgress] = progress
-      const matchingVideo = firstProgress ? videos.find((video) => video.id === firstProgress.videoId) : undefined
-      setContinueWatching(matchingVideo && firstProgress ? { video: matchingVideo, progress: firstProgress.progress } : null)
+      const matchingVideo = firstProgress
+        ? videos.find((video) => video.id === firstProgress.videoId)
+        : undefined
+      setContinueWatching(
+        matchingVideo && firstProgress ? { video: matchingVideo, progress: firstProgress.progress } : null,
+      )
 
       setAchievements(achievementsResult)
     })
@@ -70,7 +74,7 @@ export function ClientHomePage() {
         />
         <Container className="relative z-10 flex flex-col gap-8 pt-16 pb-12 sm:pt-20">
           <div className="flex flex-col gap-2">
-            <span className="text-[#9ea48c] font-sans text-sm font-semibold tracking-[0.18em] uppercase">
+            <span className="font-sans text-sm font-semibold tracking-[0.18em] text-[#9ea48c] uppercase">
               Sua jornada
             </span>
             <h1 className="text-off-white font-serif text-4xl">Olá, {firstName}</h1>
@@ -118,15 +122,22 @@ export function ClientHomePage() {
         <HoverCard>
           <div className="mb-3 flex items-center justify-between gap-3">
             <h3 className="font-serif text-lg">Próxima aula</h3>
-            <Link to="/area-do-cliente/agendamento" className="text-brown-warm hover:text-brown-deep text-sm font-medium hover:underline">
+            <Link
+              to="/area-do-cliente/agendamento"
+              className="text-brown-warm hover:text-brown-deep text-sm font-medium hover:underline"
+            >
               Ver agenda
             </Link>
           </div>
           {nextBooking ? (
             <div className="flex items-center gap-4">
               <div className="bg-brown-deep text-off-white flex min-w-14 flex-col items-center justify-center rounded-2xl px-3 py-2">
-                <span className="font-serif text-xl font-semibold">{formatDayMonth(nextBooking.date).day}</span>
-                <span className="text-[11px] tracking-wide uppercase">{formatDayMonth(nextBooking.date).month}</span>
+                <span className="font-serif text-xl font-semibold">
+                  {formatDayMonth(nextBooking.date).day}
+                </span>
+                <span className="text-[11px] tracking-wide uppercase">
+                  {formatDayMonth(nextBooking.date).month}
+                </span>
               </div>
               <div>
                 <p className="font-sans text-sm font-semibold">{nextBooking.categoryLabel}</p>
@@ -144,7 +155,10 @@ export function ClientHomePage() {
         <HoverCard>
           <div className="mb-3 flex items-center justify-between gap-3">
             <h3 className="font-serif text-lg">Seu plano</h3>
-            <Link to="/area-do-cliente/plano" className="text-brown-warm hover:text-brown-deep text-sm font-medium hover:underline">
+            <Link
+              to="/area-do-cliente/plano"
+              className="text-brown-warm hover:text-brown-deep text-sm font-medium hover:underline"
+            >
               Gerenciar
             </Link>
           </div>
@@ -175,7 +189,10 @@ export function ClientHomePage() {
         <HoverCard>
           <div className="mb-3 flex items-center justify-between gap-3">
             <h3 className="font-serif text-lg">Continue assistindo</h3>
-            <Link to="/area-do-cliente/videos" className="text-brown-warm hover:text-brown-deep text-sm font-medium hover:underline">
+            <Link
+              to="/area-do-cliente/videos"
+              className="text-brown-warm hover:text-brown-deep text-sm font-medium hover:underline"
+            >
               Biblioteca
             </Link>
           </div>
@@ -193,7 +210,10 @@ export function ClientHomePage() {
                   {continueWatching.video.duration}
                 </span>
                 <div className="bg-off-white/30 absolute inset-x-0 bottom-0 h-1">
-                  <div className="bg-brown-medium h-full" style={{ width: `${continueWatching.progress}%` }} />
+                  <div
+                    className="bg-brown-medium h-full"
+                    style={{ width: `${continueWatching.progress}%` }}
+                  />
                 </div>
               </div>
               <p className="font-sans text-sm leading-snug font-medium">{continueWatching.video.title}</p>
@@ -207,7 +227,10 @@ export function ClientHomePage() {
         <HoverCard>
           <div className="mb-3 flex items-center justify-between gap-3">
             <h3 className="font-serif text-lg">Seu progresso</h3>
-            <Link to="/area-do-cliente/agendamento" className="text-brown-warm hover:text-brown-deep text-sm font-medium hover:underline">
+            <Link
+              to="/area-do-cliente/agendamento"
+              className="text-brown-warm hover:text-brown-deep text-sm font-medium hover:underline"
+            >
               Histórico
             </Link>
           </div>

@@ -83,7 +83,9 @@ export function ClientAccountPage() {
   return (
     <Container className="flex flex-col gap-6 py-12">
       <div>
-        <span className="text-sage font-sans text-sm font-semibold tracking-[0.18em] uppercase">Sua conta</span>
+        <span className="text-sage font-sans text-sm font-semibold tracking-[0.18em] uppercase">
+          Sua conta
+        </span>
         <h1 className="font-serif text-3xl">Minha Conta</h1>
         <TitleRule />
       </div>
@@ -95,7 +97,9 @@ export function ClientAccountPage() {
           <p className="text-brown-warm/70 font-sans text-sm">{user.email}</p>
           <div className="mt-2.5 flex flex-wrap items-center gap-3">
             {plan && <Badge>{plan.name}</Badge>}
-            <span className="text-brown-warm/70 font-sans text-sm">Cliente desde {formatLongDate(user.memberSince)}</span>
+            <span className="text-brown-warm/70 font-sans text-sm">
+              Cliente desde {formatLongDate(user.memberSince)}
+            </span>
           </div>
         </div>
         <button
@@ -143,7 +147,9 @@ export function ClientAccountPage() {
             <label className="flex flex-col gap-1.5 font-sans text-sm">
               <span className="text-brown-warm/70">CPF</span>
               <input className={inputClasses} type="text" defaultValue={user.cpf} readOnly />
-              <span className="text-brown-warm/50 text-xs">Não pode ser alterado. Fale com o suporte se precisar corrigir.</span>
+              <span className="text-brown-warm/50 text-xs">
+                Não pode ser alterado. Fale com o suporte se precisar corrigir.
+              </span>
             </label>
             <label className="flex flex-col gap-1.5 font-sans text-sm">
               <span className="text-brown-warm/70">Data de nascimento</span>
@@ -151,7 +157,9 @@ export function ClientAccountPage() {
             </label>
           </div>
           <div className="border-brown-deep/8 mt-5 flex items-center justify-end gap-3 border-t pt-5">
-            {personalSaved && <span className="text-brown-warm/70 font-sans text-sm">Alterações salvas.</span>}
+            {personalSaved && (
+              <span className="text-brown-warm/70 font-sans text-sm">Alterações salvas.</span>
+            )}
             <button
               type="submit"
               disabled={isSavingPersonal}
@@ -172,7 +180,12 @@ export function ClientAccountPage() {
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="flex flex-col gap-1.5 font-sans text-sm">
               <span className="text-brown-warm/70">Dias e horários preferidos</span>
-              <input className={inputClasses} name="preferredSchedule" type="text" defaultValue={user.preferredSchedule} />
+              <input
+                className={inputClasses}
+                name="preferredSchedule"
+                type="text"
+                defaultValue={user.preferredSchedule}
+              />
             </label>
             <label className="flex flex-col gap-1.5 font-sans text-sm sm:col-span-2">
               <span className="text-brown-warm/70">Objetivo com o Pilates</span>
@@ -180,7 +193,9 @@ export function ClientAccountPage() {
             </label>
           </div>
           <div className="border-brown-deep/8 mt-5 flex items-center justify-end gap-3 border-t pt-5">
-            {preferencesSaved && <span className="text-brown-warm/70 font-sans text-sm">Alterações salvas.</span>}
+            {preferencesSaved && (
+              <span className="text-brown-warm/70 font-sans text-sm">Alterações salvas.</span>
+            )}
             <button
               type="submit"
               disabled={isSavingPreferences}
@@ -197,7 +212,9 @@ export function ClientAccountPage() {
           <IndexChip>03</IndexChip>
           <h3 className="font-serif text-lg">Notificações</h3>
         </div>
-        <p className="text-brown-warm/70 mb-3 font-sans text-sm">Alterações aqui são salvas automaticamente.</p>
+        <p className="text-brown-warm/70 mb-3 font-sans text-sm">
+          Alterações aqui são salvas automaticamente.
+        </p>
         <div className="flex flex-col">
           <div className="flex items-center justify-between py-3 font-sans text-sm">
             <span>Lembretes de aula</span>
@@ -256,7 +273,11 @@ export function ClientAccountPage() {
               <p className="font-medium">Sessões ativas</p>
               <p className="text-brown-warm/70">1 dispositivo conectado</p>
             </div>
-            <button type="button" onClick={handleSignOutEverywhere} className="text-brown-warm/60 hover:text-brown-deep font-sans text-sm">
+            <button
+              type="button"
+              onClick={handleSignOutEverywhere}
+              className="text-brown-warm/60 hover:text-brown-deep font-sans text-sm"
+            >
               Sair de todos os dispositivos
             </button>
           </div>
@@ -272,7 +293,9 @@ export function ClientAccountPage() {
           <div className="flex items-center justify-between gap-4 py-3.5 font-sans text-sm">
             <div>
               <p className="font-medium">Seus dados</p>
-              <p className="text-brown-warm/70">Baixe uma cópia de todas as informações associadas à sua conta.</p>
+              <p className="text-brown-warm/70">
+                Baixe uma cópia de todas as informações associadas à sua conta.
+              </p>
             </div>
             <button
               type="button"
@@ -284,13 +307,21 @@ export function ClientAccountPage() {
           <div className="border-brown-deep/8 flex items-center justify-between gap-4 border-t py-3.5 font-sans text-sm">
             <div>
               <p className="font-medium">Políticas</p>
-              <p className="text-brown-warm/70">Consulte como tratamos seus dados e os termos da assinatura.</p>
+              <p className="text-brown-warm/70">
+                Consulte como tratamos seus dados e os termos da assinatura.
+              </p>
             </div>
             <div className="flex gap-4">
-              <Link to="/privacidade" className="text-brown-warm hover:text-brown-deep font-medium hover:underline">
+              <Link
+                to="/privacidade"
+                className="text-brown-warm hover:text-brown-deep font-medium hover:underline"
+              >
                 Política de privacidade
               </Link>
-              <Link to="/termos" className="text-brown-warm hover:text-brown-deep font-medium hover:underline">
+              <Link
+                to="/termos"
+                className="text-brown-warm hover:text-brown-deep font-medium hover:underline"
+              >
                 Termos de uso
               </Link>
             </div>

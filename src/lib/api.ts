@@ -98,7 +98,9 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   })
 
   if (!response.ok) {
-    throw new Error(`Falha ao acessar ${path} (${response.status}). O mock-api está rodando? (npm run mock:api)`)
+    throw new Error(
+      `Falha ao acessar ${path} (${response.status}). O mock-api está rodando? (npm run mock:api)`,
+    )
   }
 
   return response.json() as Promise<T>

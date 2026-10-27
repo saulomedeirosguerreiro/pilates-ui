@@ -1,3 +1,4 @@
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { useRef } from 'react'
 import { motion } from 'motion/react'
 import { testimonialsContent, testimonialsSummary } from '../../content/testimonials'
@@ -30,7 +31,7 @@ export function Testimonials() {
               aria-label="Depoimento anterior"
               className="border-brown-deep/20 text-brown-deep hover:bg-brown-deep hover:text-off-white flex h-11 w-11 items-center justify-center rounded-full border transition-colors motion-reduce:transition-none"
             >
-              ←
+              <ArrowLeft aria-hidden="true" className="h-4 w-4" />
             </motion.button>
             <motion.button
               type="button"
@@ -40,7 +41,7 @@ export function Testimonials() {
               aria-label="Próximo depoimento"
               className="border-brown-deep/20 text-brown-deep hover:bg-brown-deep hover:text-off-white flex h-11 w-11 items-center justify-center rounded-full border transition-colors motion-reduce:transition-none"
             >
-              →
+              <ArrowRight aria-hidden="true" className="h-4 w-4" />
             </motion.button>
           </div>
         </div>

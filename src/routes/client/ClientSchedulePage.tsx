@@ -10,7 +10,9 @@ import { addDays, DEMO_TODAY, formatDayMonth, formatShortDate, formatWeekdayLong
 import { api, type Booking, type Slot } from '../../lib/api'
 
 function instructorForCategory(category: ClassCategory) {
-  return category === 'individual' || category === 'precisao' ? instructorsContent[1].name : instructorsContent[0].name
+  return category === 'individual' || category === 'precisao'
+    ? instructorsContent[1].name
+    : instructorsContent[0].name
 }
 
 export function ClientSchedulePage() {
@@ -68,7 +70,10 @@ export function ClientSchedulePage() {
         location: 'Estúdio — Unidade Centro',
         status: 'confirmed',
       })
-      const [freshBookings, freshSlots] = await Promise.all([api.getBookings(user.id), api.getSlots(category)])
+      const [freshBookings, freshSlots] = await Promise.all([
+        api.getBookings(user.id),
+        api.getSlots(category),
+      ])
       setBookings(freshBookings)
       setSlots(freshSlots)
       setBookingConfirmation(selectedSlot)
@@ -81,7 +86,9 @@ export function ClientSchedulePage() {
   return (
     <Container className="flex flex-col gap-6 py-12">
       <div>
-        <span className="text-sage font-sans text-sm font-semibold tracking-[0.18em] uppercase">Agendamento</span>
+        <span className="text-sage font-sans text-sm font-semibold tracking-[0.18em] uppercase">
+          Agendamento
+        </span>
         <h1 className="font-serif text-3xl">Suas Aulas</h1>
         <TitleRule />
         <p className="text-brown-warm/80 max-w-xl font-sans text-base">
@@ -90,19 +97,27 @@ export function ClientSchedulePage() {
       </div>
 
       <Card>
-        <p className="text-sage mb-4 font-sans text-sm font-semibold tracking-[0.18em] uppercase">Próxima aula</p>
+        <p className="text-sage mb-4 font-sans text-sm font-semibold tracking-[0.18em] uppercase">
+          Próxima aula
+        </p>
         {nextBooking ? (
           <div className="flex flex-wrap items-center gap-6">
             <div className="bg-brown-deep text-off-white flex min-w-18 flex-col items-center justify-center rounded-2xl px-4 py-3">
-              <span className="font-serif text-2xl font-semibold">{formatDayMonth(nextBooking.date).day}</span>
-              <span className="text-xs tracking-wide uppercase">{formatDayMonth(nextBooking.date).month}</span>
+              <span className="font-serif text-2xl font-semibold">
+                {formatDayMonth(nextBooking.date).day}
+              </span>
+              <span className="text-xs tracking-wide uppercase">
+                {formatDayMonth(nextBooking.date).month}
+              </span>
             </div>
             <div className="min-w-[200px] flex-1">
               <h3 className="font-serif text-xl">{nextBooking.categoryLabel}</h3>
               <p className="font-sans text-sm">
                 {formatWeekdayLong(nextBooking.date)} · {nextBooking.time}
               </p>
-              {nextBooking.location && <p className="text-brown-warm/70 font-sans text-sm">{nextBooking.location}</p>}
+              {nextBooking.location && (
+                <p className="text-brown-warm/70 font-sans text-sm">{nextBooking.location}</p>
+              )}
               <div className="mt-2 flex items-center gap-2 font-sans text-sm">
                 <Avatar initials="AN" size="md" />
                 <span>com {nextBooking.instructor}</span>
@@ -136,7 +151,9 @@ export function ClientSchedulePage() {
       {otherUpcoming.length > 0 && (
         <Card>
           <h3 className="font-serif text-lg">Próximas aulas</h3>
-          <p className="text-brown-warm/70 mb-1 font-sans text-sm">Outros horários já confirmados na sua agenda.</p>
+          <p className="text-brown-warm/70 mb-1 font-sans text-sm">
+            Outros horários já confirmados na sua agenda.
+          </p>
           <div className="flex flex-col">
             {otherUpcoming.map((booking) => (
               <div
@@ -152,10 +169,16 @@ export function ClientSchedulePage() {
                   </p>
                 </div>
                 <div className="flex gap-4">
-                  <button type="button" className="text-brown-warm hover:text-brown-deep font-sans text-sm font-medium">
+                  <button
+                    type="button"
+                    className="text-brown-warm hover:text-brown-deep font-sans text-sm font-medium"
+                  >
                     Reagendar
                   </button>
-                  <button type="button" className="text-brown-warm/60 hover:text-brown-deep font-sans text-sm">
+                  <button
+                    type="button"
+                    className="text-brown-warm/60 hover:text-brown-deep font-sans text-sm"
+                  >
                     Cancelar
                   </button>
                 </div>
@@ -167,7 +190,9 @@ export function ClientSchedulePage() {
 
       <Card>
         <h3 className="font-serif text-lg">Agendar nova aula</h3>
-        <p className="text-brown-warm/70 mb-4 font-sans text-sm">Escolha a modalidade e um horário disponível.</p>
+        <p className="text-brown-warm/70 mb-4 font-sans text-sm">
+          Escolha a modalidade e um horário disponível.
+        </p>
 
         {bookingConfirmation ? (
           <div className="flex flex-col items-center gap-3 py-6 text-center">
@@ -192,7 +217,12 @@ export function ClientSchedulePage() {
         ) : (
           <>
             <div className="mb-5">
-              <Tabs options={classCategories} value={category} onChange={handleCategoryChange} aria-label="Modalidade" />
+              <Tabs
+                options={classCategories}
+                value={category}
+                onChange={handleCategoryChange}
+                aria-label="Modalidade"
+              />
             </div>
             <div className="mb-5 grid grid-cols-2 gap-2.5 sm:grid-cols-3">
               {slots.map((slot) => {
@@ -211,9 +241,16 @@ export function ClientSchedulePage() {
                           : 'border-brown-deep/15 hover:border-brown-warm'
                     }`}
                   >
-                    {isSelected && <Check aria-hidden="true" className="text-brown-deep absolute top-2.5 right-2.5 h-4 w-4" />}
+                    {isSelected && (
+                      <Check
+                        aria-hidden="true"
+                        className="text-brown-deep absolute top-2.5 right-2.5 h-4 w-4"
+                      />
+                    )}
                     <strong>{slot.dayLabel}</strong>
-                    <span className="text-brown-warm/70 text-xs">{slot.time} · {slot.full ? 'Esgotado' : 'Disponível'}</span>
+                    <span className="text-brown-warm/70 text-xs">
+                      {slot.time} · {slot.full ? 'Esgotado' : 'Disponível'}
+                    </span>
                   </button>
                 )
               })}
@@ -261,14 +298,16 @@ export function ClientSchedulePage() {
             <span className="text-brown-warm/70 font-sans text-sm">minutos de prática</span>
           </div>
           <div>
-            <strong className="block font-serif text-2xl font-semibold">{user.stats.recordStreakWeeks}</strong>
+            <strong className="block font-serif text-2xl font-semibold">
+              {user.stats.recordStreakWeeks}
+            </strong>
             <span className="text-brown-warm/70 font-sans text-sm">semanas — sequência recorde</span>
           </div>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full font-sans text-sm">
             <thead>
-              <tr className="border-brown-deep/10 border-b text-xs tracking-wide text-brown-warm/70 uppercase">
+              <tr className="border-brown-deep/10 text-brown-warm/70 border-b text-xs tracking-wide uppercase">
                 <th className="px-4 py-3 text-left">Data</th>
                 <th className="px-4 py-3 text-left">Aula</th>
                 <th className="px-4 py-3 text-left">Instrutora</th>

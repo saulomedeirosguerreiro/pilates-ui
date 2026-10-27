@@ -64,7 +64,10 @@ export function LoginPage() {
               description="Veja seu plano, agende aulas e acompanhe sua jornada no Pilates Studio."
             />
 
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+            <form
+              onSubmit={handleSubmit}
+              className="border-brown-deep/10 bg-beige-light flex flex-col gap-5 rounded-3xl border p-6 sm:p-8"
+            >
               <label className="text-brown-deep flex flex-col gap-2 font-sans text-sm">
                 <span className="font-medium">E-mail</span>
                 <input
@@ -93,11 +96,6 @@ export function LoginPage() {
                 {isSubmitting ? 'Entrando…' : 'Entrar'}
               </Button>
             </form>
-
-            <p className="bg-beige-light text-brown-warm/80 rounded-xl p-4 font-sans text-sm">
-              Ambiente de demonstração — use <strong>alexandria.souza@email.com</strong> e a senha{' '}
-              <strong>pilates2026</strong> para entrar.
-            </p>
 
             <p className="text-brown-warm/70 font-sans text-sm">
               Ainda não é cliente?{' '}

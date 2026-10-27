@@ -70,7 +70,10 @@ export function Header() {
             </MagneticButton>
           ) : (
             <>
-              <a href="/entrar" className="text-off-white/80 hover:text-off-white font-sans text-sm font-medium">
+              <a
+                href="/entrar"
+                className="text-off-white/80 hover:text-off-white font-sans text-sm font-medium"
+              >
                 Entrar
               </a>
               <MagneticButton>

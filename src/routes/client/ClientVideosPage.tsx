@@ -48,13 +48,14 @@ export function ClientVideosPage() {
         <h1 className="font-serif text-3xl">Biblioteca de Vídeos</h1>
         <TitleRule />
         <p className="text-brown-warm/80 max-w-xl font-sans text-base">
-          Vídeos selecionados pela nossa equipe para você praticar, entender a técnica e evoluir entre as aulas.
+          Vídeos selecionados pela nossa equipe para você praticar, entender a técnica e evoluir entre as
+          aulas.
         </p>
       </div>
 
       <div className="bg-brown-elevated flex flex-col gap-6 rounded-3xl p-5 sm:flex-row">
         <div
-          className="relative flex flex-1 aspect-video items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#22190e,#4e331c_60%,#916e4b)]"
+          className="relative flex aspect-video flex-1 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#22190e,#4e331c_60%,#916e4b)]"
           style={{ minWidth: 0 }}
         >
           <button
@@ -78,7 +79,12 @@ export function ClientVideosPage() {
         </div>
       </div>
 
-      <Tabs options={classCategories} value={category} onChange={setCategory} aria-label="Categorias de vídeo" />
+      <Tabs
+        options={classCategories}
+        value={category}
+        onChange={setCategory}
+        aria-label="Categorias de vídeo"
+      />
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {videosInCategory.map((video) => {
