@@ -1,69 +1,58 @@
-export type BillingPeriod = 'mensal' | 'anual'
-
-export const billingPeriods: { value: BillingPeriod; label: string }[] = [
-  { value: 'mensal', label: 'Mensal' },
-  { value: 'anual', label: 'Anual' },
-]
-
 export type PricingPlan = {
   id: string
   index: string
   name: string
   description: string
-  priceBRL: Record<BillingPeriod, number>
+  priceBRL: number
   highlighted: boolean
   badge: string | null
   features: string[]
 }
 
-/**
- * Valores e benefícios de exemplo — não existe hoje uma tabela de 3 planos em
- * site.config.ts (que hoje modela só a oferta de pré-venda). Revisar com o
- * estúdio antes de publicar.
- */
 export const pricingPlans: PricingPlan[] = [
   {
-    id: 'iniciante',
+    id: 'equilibrio',
     index: '01',
-    name: 'Iniciante',
-    description: 'Uma forma simples de começar sua jornada no pilates.',
-    priceBRL: { mensal: 149, anual: 1430 },
+    name: 'Equilíbrio',
+    description: 'O equilíbrio ideal para manter a constância e cuidar do seu corpo.',
+    priceBRL: 300,
     highlighted: false,
     badge: null,
     features: [
-      'Acesso às aulas em grupo',
-      '2 sessões por semana',
-      'Programas para iniciantes',
-      'Acesso básico ao estúdio',
+      '2 sessões de Pilates por semana',
+      'Aulas em grupo',
+      'Rotina consistente de exercícios',
+      'Acompanhamento durante as aulas',
     ],
   },
   {
-    id: 'equilibrio',
+    id: 'pilates-massoterapia',
     index: '02',
-    name: 'Equilíbrio',
-    description: 'Mantenha a consistência com uma rotina flexível e equilibrada.',
-    priceBRL: { mensal: 249, anual: 2390 },
+    name: 'Pilates + Massoterapia',
+    description: 'Combine movimento e relaxamento em uma rotina completa de cuidado e bem-estar.',
+    priceBRL: 399,
     highlighted: true,
     badge: 'Popular',
     features: [
-      'Rotina flexível e consistente',
-      '1 sessão individual por mês',
-      'Acesso a aulas em grupo ilimitadas',
-      'Treino com foco em progresso',
+      '2 sessões de Pilates por semana',
+      'Aulas em grupo',
+      '1 sessão de massoterapia por mês',
+      'Mais equilíbrio entre corpo e mente',
     ],
   },
   {
     id: 'premium',
     index: '03',
     name: 'Premium',
-    description: 'Uma experiência completa de pilates, alinhada aos seus objetivos.',
-    priceBRL: { mensal: 399, anual: 3830 },
+    description:
+      'Uma experiência personalizada de Pilates individual e massoterapia para cuidar de você por completo.',
+    priceBRL: 599,
     highlighted: false,
     badge: null,
     features: [
-      'Aulas em grupo ilimitadas',
-      '4 sessões individuais por mês',
-      'Acesso completo ao reformer',
+      '2 sessões individuais de Pilates por semana',
+      'Atendimento individualizado',
+      '2 sessões de massoterapia por mês',
       'Acompanhamento personalizado',
     ],
   },

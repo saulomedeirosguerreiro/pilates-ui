@@ -1,15 +1,11 @@
-import { useState } from 'react'
-import { billingPeriods, pricingPlans, type BillingPeriod } from '../../content/pricing'
+import { pricingPlans } from '../../content/pricing'
 import { Blob } from '../motion/Blob'
 import { Reveal } from '../motion/Reveal'
 import { LinkButton } from '../ui/Button'
 import { Container } from '../ui/Container'
 import { SectionHeading } from '../ui/SectionHeading'
-import { Tabs } from '../ui/Tabs'
 
 export function Pricing() {
-  const [period, setPeriod] = useState<BillingPeriod>('mensal')
-
   return (
     <section id="planos" className="bg-brown-deep relative overflow-hidden py-20 sm:py-28">
       <Blob color="beige-light" className="absolute top-1/4 -right-20 h-72 w-72" duration={26} />
@@ -20,13 +16,6 @@ export function Pricing() {
           title="Escolha um plano que combine com seu estilo de vida, objetivos e ritmo."
           align="center"
           tone="light"
-        />
-
-        <Tabs
-          aria-label="Periodicidade do plano"
-          options={billingPeriods}
-          value={period}
-          onChange={setPeriod}
         />
 
         <div className="grid w-full gap-6 lg:grid-cols-3">
@@ -59,10 +48,8 @@ export function Pricing() {
 
                 <div>
                   <p className="font-serif text-4xl">
-                    R$ {plan.priceBRL[period].toLocaleString('pt-BR')}
-                    <span className="font-sans text-base font-normal opacity-70">
-                      /{period === 'mensal' ? 'mês' : 'ano'}
-                    </span>
+                    R$ {plan.priceBRL.toLocaleString('pt-BR')}
+                    <span className="font-sans text-base font-normal opacity-70">/mês</span>
                   </p>
                   <p
                     className={`mt-2 font-sans text-sm ${plan.highlighted ? 'text-brown-warm/80' : 'text-off-white/70'}`}
