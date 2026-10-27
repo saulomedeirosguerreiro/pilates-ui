@@ -1,3 +1,4 @@
+import { ChevronLeft } from 'lucide-react'
 import type { ComponentProps, FormEvent } from 'react'
 import { useState } from 'react'
 import { useSearchParams } from 'react-router'
@@ -26,9 +27,17 @@ function Field({
   )
 }
 
-function SectionTitle({ index, title }: { index: string; title: string }) {
+function SectionTitle({
+  index,
+  title,
+  className = '',
+}: {
+  index: string
+  title: string
+  className?: string
+}) {
   return (
-    <legend className="text-brown-deep flex items-center gap-3 font-serif text-xl sm:text-2xl">
+    <legend className={`text-brown-deep flex items-center gap-3 font-serif text-xl sm:text-2xl ${className}`}>
       <span className="bg-beige-light text-brown-deep rounded-full px-3 py-1 font-sans text-sm font-medium">
         {index}
       </span>
@@ -92,11 +101,23 @@ export function CadastroPage() {
     <SiteChrome>
       <section className="bg-off-white pt-32 pb-24 sm:pt-40">
         <Container className="flex flex-col gap-16">
-          <SectionHeading
-            eyebrow="Cadastro"
-            title="Crie sua conta e comece a treinar."
-            description="Preencha seus dados para contratar um dos nossos planos."
-          />
+          <div className="flex flex-col gap-6">
+            <Reveal>
+              <a
+                href="/"
+                className="text-brown-warm/70 hover:text-brown-deep inline-flex items-center gap-1.5 font-sans text-sm transition-colors motion-reduce:transition-none"
+              >
+                <ChevronLeft aria-hidden="true" className="h-6 w-6" />
+                Voltar
+              </a>
+            </Reveal>
+
+            <SectionHeading
+              eyebrow="Cadastro"
+              title="Crie sua conta e comece a treinar."
+              description="Preencha seus dados para contratar um dos nossos planos."
+            />
+          </div>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-16">
             <Reveal as="fieldset" className="flex flex-col gap-6">
@@ -201,8 +222,8 @@ export function CadastroPage() {
               </p>
             </Reveal>
 
-            <Reveal as="fieldset" delay={0.2} className="flex flex-col gap-4">
-              <SectionTitle index="05" title="Confirmações" />
+            <Reveal as="fieldset" delay={0.2} className="flex flex-col gap-6">
+              <SectionTitle index="05" title="Confirmações" className="mb-2" />
               <label className="text-brown-deep flex items-start gap-3 font-sans text-sm">
                 <input type="checkbox" name="aceiteTermos" required className="mt-1" />
                 <span>

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion, useMotionValueEvent, useScroll } from 'motion/react'
+import { useLocation } from 'react-router'
 import { useSiteConfig } from '../../config/useSiteConfig'
 import { MagneticButton } from '../motion/MagneticButton'
 import { LinkButton } from '../ui/Button'
@@ -14,6 +15,9 @@ const NAV_LINKS = [
 
 export function Header() {
   const { company } = useSiteConfig()
+  const location = useLocation()
+  const isCadastroPage = location.pathname === '/cadastro'
+  const isHomePage = location.pathname === '/'
   const { scrollY } = useScroll()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isHidden, setIsHidden] = useState(false)
@@ -29,7 +33,7 @@ export function Header() {
   })
 
   const headerSurface =
-    isScrolled || isMenuOpen ? 'bg-brown-deep/95 shadow-sm backdrop-blur' : 'bg-transparent'
+    isScrolled || isMenuOpen || !isHomePage ? 'bg-brown-deep/95 shadow-sm backdrop-blur' : 'bg-transparent'
 
   return (
     <motion.header
@@ -58,14 +62,27 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <a href="/#planos" className="text-off-white/80 hover:text-off-white font-sans text-sm font-medium">
-            Entrar
-          </a>
-          <MagneticButton>
-            <LinkButton variant="light" href="/cadastro">
-              Cadastrar
-            </LinkButton>
-          </MagneticButton>
+          {isCadastroPage ? (
+            <MagneticButton>
+              <LinkButton variant="light" href="/#planos">
+                Entrar
+              </LinkButton>
+            </MagneticButton>
+          ) : (
+            <>
+              <a
+                href="/#planos"
+                className="text-off-white/80 hover:text-off-white font-sans text-sm font-medium"
+              >
+                Entrar
+              </a>
+              <MagneticButton>
+                <LinkButton variant="light" href="/cadastro">
+                  Cadastrar
+                </LinkButton>
+              </MagneticButton>
+            </>
+          )}
         </div>
 
         <button
@@ -99,14 +116,25 @@ export function Header() {
                 {link.label}
               </a>
             ))}
-            <LinkButton
-              variant="light"
-              className="mt-2 w-full"
-              href="/cadastro"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Cadastrar
-            </LinkButton>
+            {isCadastroPage ? (
+              <LinkButton
+                variant="light"
+                className="mt-2 w-full"
+                href="/#planos"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Entrar
+              </LinkButton>
+            ) : (
+              <LinkButton
+                variant="light"
+                className="mt-2 w-full"
+                href="/cadastro"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Cadastrar
+              </LinkButton>
+            )}
           </Container>
         </nav>
       )}
