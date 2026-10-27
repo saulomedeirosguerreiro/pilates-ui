@@ -23,13 +23,13 @@ export function SectionHeading({
   const descriptionColor = tone === 'light' ? 'text-off-white/70' : 'text-brown-warm/80'
 
   return (
-    <div className={`flex max-w-2xl flex-col gap-3 ${alignment}`}>
+    <div className={`flex w-full max-w-2xl flex-col gap-3 ${alignment}`}>
       {eyebrow && (
         <Reveal as="span" className="text-sage font-sans text-sm font-medium tracking-[0.2em] uppercase">
           {eyebrow}
         </Reveal>
       )}
-      <h2 id={id} className={`font-serif text-3xl text-balance sm:text-4xl ${titleColor}`}>
+      <h2 id={id} className={`w-full font-serif text-3xl text-balance sm:text-4xl ${titleColor}`}>
         <SplitLines text={title} />
       </h2>
       {description && (
