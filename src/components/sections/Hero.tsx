@@ -27,7 +27,7 @@ export function Hero() {
     <section
       ref={sectionRef}
       id="inicio"
-      className="relative flex min-h-screen items-end overflow-hidden pb-20"
+      className="relative flex min-h-screen items-end overflow-hidden pb-32"
     >
       <motion.img
         src={heroImage}
