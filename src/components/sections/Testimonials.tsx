@@ -1,5 +1,8 @@
 import { useRef } from 'react'
+import { motion } from 'motion/react'
 import { testimonialsContent, testimonialsSummary } from '../../content/testimonials'
+import { Counter } from '../motion/Counter'
+import { Reveal } from '../motion/Reveal'
 import { Container } from '../ui/Container'
 import { SectionHeading } from '../ui/SectionHeading'
 
@@ -19,29 +22,35 @@ export function Testimonials() {
             title="Ouça de quem já vive essa experiência com a gente."
           />
           <div className="flex gap-3">
-            <button
+            <motion.button
               type="button"
               onClick={() => scrollBy(-1)}
+              whileTap={{ scale: 0.9 }}
+              transition={{ duration: 0.15 }}
               aria-label="Depoimento anterior"
               className="border-brown-deep/20 text-brown-deep hover:bg-brown-deep hover:text-off-white flex h-11 w-11 items-center justify-center rounded-full border transition-colors motion-reduce:transition-none"
             >
               ←
-            </button>
-            <button
+            </motion.button>
+            <motion.button
               type="button"
               onClick={() => scrollBy(1)}
+              whileTap={{ scale: 0.9 }}
+              transition={{ duration: 0.15 }}
               aria-label="Próximo depoimento"
               className="border-brown-deep/20 text-brown-deep hover:bg-brown-deep hover:text-off-white flex h-11 w-11 items-center justify-center rounded-full border transition-colors motion-reduce:transition-none"
             >
               →
-            </button>
+            </motion.button>
           </div>
         </div>
 
         <div ref={scrollerRef} className="flex snap-x gap-6 overflow-x-auto pb-4">
-          {testimonialsContent.map((testimonial) => (
-            <div
+          {testimonialsContent.map((testimonial, index) => (
+            <Reveal
               key={testimonial.name}
+              delay={index * 0.1}
+              y={32}
               className="bg-brown-deep text-off-white flex w-80 shrink-0 snap-start flex-col gap-4 rounded-3xl p-8"
             >
               <div className="flex items-center justify-between">
@@ -52,17 +61,19 @@ export function Testimonials() {
               </div>
               <p className="text-off-white/80 font-sans text-sm text-pretty">{testimonial.quote}</p>
               <p className="font-sans text-sm font-medium">{testimonial.name}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
 
-        <div className="flex flex-wrap items-center gap-4">
+        <Reveal className="flex flex-wrap items-center gap-4">
           <p className="text-brown-deep font-sans text-sm">
-            <span className="font-serif text-lg">{testimonialsSummary.reviewCount}</span>{' '}
+            <span className="font-serif text-lg">
+              <Counter to={testimonialsSummary.reviewCount} />
+            </span>{' '}
             {testimonialsSummary.label} amam nossos serviços
           </p>
           <span className="text-brown-warm/70 font-sans text-sm">{testimonialsSummary.basedOnLabel}</span>
-        </div>
+        </Reveal>
       </Container>
     </section>
   )

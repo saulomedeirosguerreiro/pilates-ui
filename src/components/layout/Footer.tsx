@@ -1,4 +1,6 @@
 import { useSiteConfig } from '../../config/useSiteConfig'
+import { BlurText } from '../motion/BlurText'
+import { Reveal } from '../motion/Reveal'
 import { Button } from '../ui/Button'
 import { Container } from '../ui/Container'
 import { SectionHeading } from '../ui/SectionHeading'
@@ -36,24 +38,26 @@ export function Footer() {
               description="Conecte-se para saber mais sobre o estúdio, as aulas e a experiência personalizada de pilates."
               tone="light"
             />
-            <form
-              className="flex flex-col gap-3 sm:flex-row"
-              onSubmit={(event) => event.preventDefault()}
-              aria-label="Cadastro de e-mail"
-            >
-              <input
-                type="email"
-                required
-                placeholder="Seu endereço de e-mail"
-                className="bg-off-white/10 text-off-white placeholder:text-off-white/50 focus-visible:ring-off-white w-full rounded-full px-5 py-3 font-sans text-sm focus-visible:ring-2 focus-visible:outline-none sm:flex-1"
-              />
-              <Button type="submit" variant="light">
-                Enviar →
-              </Button>
-            </form>
+            <Reveal delay={0.2}>
+              <form
+                className="flex flex-col gap-3 sm:flex-row"
+                onSubmit={(event) => event.preventDefault()}
+                aria-label="Cadastro de e-mail"
+              >
+                <input
+                  type="email"
+                  required
+                  placeholder="Seu endereço de e-mail"
+                  className="bg-off-white/10 text-off-white placeholder:text-off-white/50 focus-visible:ring-off-white w-full rounded-full px-5 py-3 font-sans text-sm focus-visible:ring-2 focus-visible:outline-none sm:flex-1"
+                />
+                <Button type="submit" variant="light">
+                  Enviar →
+                </Button>
+              </form>
+            </Reveal>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 font-sans text-sm sm:gap-12">
+          <Reveal delay={0.1} className="grid grid-cols-2 gap-8 font-sans text-sm sm:gap-12">
             <div className="flex flex-col gap-1">
               <p className="text-off-white/50 text-xs font-medium tracking-wide uppercase">Endereço</p>
               <p className="text-off-white/80">{company.address ?? 'Endereço a divulgar em breve.'}</p>
@@ -66,11 +70,17 @@ export function Footer() {
               <p className="text-off-white/50 text-xs font-medium tracking-wide uppercase">Telefone</p>
               <p className="text-off-white/80">{company.phone ?? 'em breve'}</p>
             </div>
-          </div>
+          </Reveal>
         </div>
 
         <div className="border-off-white/10 flex flex-col gap-4 border-t pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-off-white font-serif text-lg">{company.name}</p>
+          <BlurText
+            as="p"
+            text={company.name}
+            splitBy="letter"
+            stagger={0.03}
+            className="text-off-white font-serif text-lg"
+          />
 
           <nav aria-label="Links institucionais" className="flex flex-wrap gap-x-6 gap-y-2 font-sans text-sm">
             {links.privacyPolicy ? (

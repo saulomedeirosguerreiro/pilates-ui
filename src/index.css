@@ -12,3 +12,18 @@
     @apply font-serif;
   }
 }
+
+/* Recomendado pelo Lenis: evita conflito com scroll-behavior nativo e trava
+   o scroll corretamente quando necessário (ex.: menu mobile aberto). */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}

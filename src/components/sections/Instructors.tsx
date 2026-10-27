@@ -3,6 +3,9 @@ import instructor2 from '../../assets/images/photos/instructor-2.jpg'
 import instructor3 from '../../assets/images/photos/instructor-3.jpg'
 import instructor4 from '../../assets/images/photos/instructor-4.jpg'
 import { instructorsContent } from '../../content/instructors'
+import { MagneticButton } from '../motion/MagneticButton'
+import { Reveal } from '../motion/Reveal'
+import { RevealImage } from '../motion/RevealImage'
 import { LinkButton } from '../ui/Button'
 import { Container } from '../ui/Container'
 import { SectionHeading } from '../ui/SectionHeading'
@@ -18,20 +21,32 @@ export function Instructors() {
             eyebrow="Instrutores"
             title="Escolha seu instrutor — vamos te guiar em cada etapa do caminho."
           />
-          <LinkButton variant="primary" href="#planos">
-            Treinar →
-          </LinkButton>
+          <Reveal delay={0.2}>
+            <MagneticButton>
+              <LinkButton variant="primary" href="#planos">
+                Treinar →
+              </LinkButton>
+            </MagneticButton>
+          </Reveal>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {instructorsContent.map((instructor, index) => (
-            <div key={instructor.index} className="group relative aspect-[3/4] overflow-hidden rounded-3xl">
-              <img
+            <Reveal
+              key={instructor.index}
+              delay={index * 0.1}
+              y={32}
+              className="relative aspect-[3/4] overflow-hidden rounded-3xl shadow-lg shadow-black/0 transition-[transform,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:shadow-black/30 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+            >
+              <RevealImage
                 src={IMAGES[index]}
                 alt={instructor.imageAlt}
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none"
+                parallax
+                hoverZoom
+                grayscale
+                className="absolute inset-0 h-full w-full"
               />
-              <div className="from-brown-deep/90 absolute inset-0 bg-gradient-to-t via-transparent to-transparent" />
+              <div className="from-brown-deep/90 pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent" />
 
               <span className="bg-off-white/15 text-off-white absolute top-4 left-4 rounded-full px-3 py-1 font-sans text-xs font-medium backdrop-blur">
                 {instructor.index} {instructor.name}
@@ -53,7 +68,7 @@ export function Instructors() {
                   </a>
                 </div>
               )}
-            </div>
+            </Reveal>
           ))}
         </div>
       </Container>

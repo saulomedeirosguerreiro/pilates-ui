@@ -5,10 +5,14 @@ import { Hero } from '../components/sections/Hero'
 import { Instructors } from '../components/sections/Instructors'
 import { Pricing } from '../components/sections/Pricing'
 import { Testimonials } from '../components/sections/Testimonials'
+import { ScrollProgressBar } from '../components/motion/ScrollProgressBar'
+import { SmoothScroll } from '../components/motion/SmoothScroll'
 
 export function LandingPage() {
   return (
     <>
+      <SmoothScroll />
+      <ScrollProgressBar />
       <Header />
       <main>
         <Hero />

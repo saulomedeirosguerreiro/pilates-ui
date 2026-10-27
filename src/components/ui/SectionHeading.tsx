@@ -1,3 +1,6 @@
+import { Reveal } from '../motion/Reveal'
+import { SplitLines } from '../motion/SplitLines'
+
 type SectionHeadingProps = {
   eyebrow?: string
   title: string
@@ -22,13 +25,21 @@ export function SectionHeading({
   return (
     <div className={`flex max-w-2xl flex-col gap-3 ${alignment}`}>
       {eyebrow && (
-        <span className="text-sage font-sans text-sm font-medium tracking-[0.2em] uppercase">{eyebrow}</span>
+        <Reveal as="span" className="text-sage font-sans text-sm font-medium tracking-[0.2em] uppercase">
+          {eyebrow}
+        </Reveal>
       )}
       <h2 id={id} className={`font-serif text-3xl text-balance sm:text-4xl ${titleColor}`}>
-        {title}
+        <SplitLines text={title} />
       </h2>
       {description && (
-        <p className={`font-sans text-base text-pretty sm:text-lg ${descriptionColor}`}>{description}</p>
+        <Reveal
+          as="p"
+          delay={0.15}
+          className={`font-sans text-base text-pretty sm:text-lg ${descriptionColor}`}
+        >
+          {description}
+        </Reveal>
       )}
     </div>
   )

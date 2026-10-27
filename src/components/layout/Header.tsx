@@ -1,5 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { motion, useMotionValueEvent, useScroll } from 'motion/react'
 import { useSiteConfig } from '../../config/useSiteConfig'
+import { MagneticButton } from '../motion/MagneticButton'
 import { LinkButton } from '../ui/Button'
 import { Container } from '../ui/Container'
 
@@ -12,23 +14,27 @@ const NAV_LINKS = [
 
 export function Header() {
   const { company } = useSiteConfig()
+  const { scrollY } = useScroll()
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isHidden, setIsHidden] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  useEffect(() => {
-    function handleScroll() {
-      setIsScrolled(window.scrollY > 24)
-    }
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    setIsScrolled(latest > 24)
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    const previous = scrollY.getPrevious() ?? 0
+    const isScrollingDown = latest > previous
+
+    setIsHidden(latest > 160 && isScrollingDown)
+  })
 
   const headerSurface =
     isScrolled || isMenuOpen ? 'bg-brown-deep/95 shadow-sm backdrop-blur' : 'bg-transparent'
 
   return (
-    <header
+    <motion.header
+      animate={{ y: isHidden && !isMenuOpen ? '-100%' : '0%' }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed inset-x-0 top-0 z-40 transition-colors motion-reduce:transition-none ${headerSurface}`}
     >
       <Container className="flex h-20 items-center justify-between">
@@ -55,9 +61,11 @@ export function Header() {
           <a href="#planos" className="text-off-white/80 hover:text-off-white font-sans text-sm font-medium">
             Entrar
           </a>
-          <LinkButton variant="light" href="#planos">
-            Cadastrar
-          </LinkButton>
+          <MagneticButton>
+            <LinkButton variant="light" href="#planos">
+              Cadastrar
+            </LinkButton>
+          </MagneticButton>
         </div>
 
         <button
@@ -102,6 +110,6 @@ export function Header() {
           </Container>
         </nav>
       )}
-    </header>
+    </motion.header>
   )
 }

@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { billingPeriods, pricingPlans, type BillingPeriod } from '../../content/pricing'
+import { Blob } from '../motion/Blob'
+import { Reveal } from '../motion/Reveal'
 import { LinkButton } from '../ui/Button'
 import { Container } from '../ui/Container'
 import { SectionHeading } from '../ui/SectionHeading'
@@ -9,8 +11,10 @@ export function Pricing() {
   const [period, setPeriod] = useState<BillingPeriod>('mensal')
 
   return (
-    <section id="planos" className="bg-brown-deep py-20 sm:py-28">
-      <Container className="flex flex-col items-center gap-12">
+    <section id="planos" className="bg-brown-deep relative overflow-hidden py-20 sm:py-28">
+      <Blob color="beige-light" className="absolute top-1/4 -right-20 h-72 w-72" duration={26} />
+
+      <Container className="relative flex flex-col items-center gap-12">
         <SectionHeading
           eyebrow="Encontre o plano perfeito"
           title="Escolha um plano que combine com seu estilo de vida, objetivos e ritmo."
@@ -26,13 +30,18 @@ export function Pricing() {
         />
 
         <div className="grid w-full gap-6 lg:grid-cols-3">
-          {pricingPlans.map((plan) => {
+          {pricingPlans.map((plan, index) => {
             const surface = plan.highlighted
               ? 'bg-off-white text-brown-deep'
               : 'bg-brown-elevated text-off-white'
 
             return (
-              <div key={plan.id} className={`flex flex-col gap-6 rounded-3xl p-8 ${surface}`}>
+              <Reveal
+                key={plan.id}
+                delay={index * 0.1}
+                y={32}
+                className={`flex flex-col gap-6 rounded-3xl p-8 shadow-lg shadow-black/0 transition-[transform,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:shadow-black/30 motion-reduce:transition-none motion-reduce:hover:translate-y-0 ${surface}`}
+              >
                 <div className="flex items-center justify-between">
                   <span
                     className={`rounded-full px-3 py-1 font-sans text-xs font-medium ${
@@ -79,7 +88,7 @@ export function Pricing() {
                     ))}
                   </ul>
                 </div>
-              </div>
+              </Reveal>
             )
           })}
         </div>
