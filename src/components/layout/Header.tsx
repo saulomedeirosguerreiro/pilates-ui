@@ -64,16 +64,13 @@ export function Header() {
         <div className="hidden items-center gap-3 md:flex">
           {isCadastroPage ? (
             <MagneticButton>
-              <LinkButton variant="light" href="/#planos">
+              <LinkButton variant="light" href="/entrar">
                 Entrar
               </LinkButton>
             </MagneticButton>
           ) : (
             <>
-              <a
-                href="/#planos"
-                className="text-off-white/80 hover:text-off-white font-sans text-sm font-medium"
-              >
+              <a href="/entrar" className="text-off-white/80 hover:text-off-white font-sans text-sm font-medium">
                 Entrar
               </a>
               <MagneticButton>
@@ -120,7 +117,7 @@ export function Header() {
               <LinkButton
                 variant="light"
                 className="mt-2 w-full"
-                href="/#planos"
+                href="/entrar"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Entrar

@@ -51,7 +51,7 @@ export function Footer() {
                   className="bg-off-white/10 text-off-white placeholder:text-off-white/50 focus-visible:ring-off-white w-full rounded-full px-5 py-3 font-sans text-sm focus-visible:ring-2 focus-visible:outline-none sm:flex-1"
                 />
                 <Button type="submit" variant="light">
-                  Enviar →
+                  Enviar
                 </Button>
               </form>
             </Reveal>

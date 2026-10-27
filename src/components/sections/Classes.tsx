@@ -64,7 +64,7 @@ function ClassCard({
           href="#planos"
           className="bg-off-white text-brown-deep hover:bg-beige-light shrink-0 rounded-full px-4 py-2 font-sans text-sm font-medium transition-colors motion-reduce:transition-none"
         >
-          Treinar →
+          Treinar
         </a>
       </div>
     </Reveal>

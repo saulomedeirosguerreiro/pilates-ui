@@ -25,7 +25,7 @@ export function Instructors() {
           <Reveal delay={0.2}>
             <MagneticButton>
               <LinkButton variant="primary" href="#planos">
-                Treinar →
+                Treinar
               </LinkButton>
             </MagneticButton>
           </Reveal>
@@ -66,7 +66,7 @@ export function Instructors() {
                     href="#planos"
                     className="bg-off-white text-brown-deep hover:bg-beige-light shrink-0 rounded-full px-4 py-2 font-sans text-sm font-medium transition-colors motion-reduce:transition-none"
                   >
-                    Treinar →
+                    Treinar
                   </a>
                 </div>
               )}

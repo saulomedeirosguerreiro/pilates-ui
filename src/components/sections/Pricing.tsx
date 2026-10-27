@@ -63,7 +63,7 @@ export function Pricing() {
                   href={`/cadastro?plano=${plan.id}`}
                   className="w-full"
                 >
-                  Começar →
+                  Começar
                 </LinkButton>
 
                 <div>

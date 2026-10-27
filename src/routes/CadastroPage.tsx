@@ -262,7 +262,7 @@ export function CadastroPage() {
             </Reveal>
 
             <Button type="submit" variant="primary" className="self-start">
-              Finalizar cadastro →
+              Finalizar cadastro
             </Button>
           </form>
         </Container>
