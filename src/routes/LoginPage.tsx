@@ -7,6 +7,7 @@ import { Reveal } from '../components/motion/Reveal'
 import { useAuth } from '../auth/useAuth'
 import { Button } from '../components/ui/Button'
 import { Container } from '../components/ui/Container'
+import { PasswordField } from '../components/ui/PasswordField'
 import { SectionHeading } from '../components/ui/SectionHeading'
 
 const inputClasses =
@@ -79,16 +80,7 @@ export function LoginPage() {
                   required
                 />
               </label>
-              <label className="text-brown-deep flex flex-col gap-2 font-sans text-sm">
-                <span className="font-medium">Senha</span>
-                <input
-                  className={inputClasses}
-                  type="password"
-                  name="senha"
-                  autoComplete="current-password"
-                  required
-                />
-              </label>
+              <PasswordField label="Senha" name="senha" autoComplete="current-password" required />
 
               {error && <p className="font-sans text-sm text-red-700">{error}</p>}
 

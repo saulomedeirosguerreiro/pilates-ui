@@ -36,7 +36,7 @@ export const siteConfig: SiteConfig = {
   company: {
     name: 'Pilates Studio',
     cnpj: null,
-    address: null,
+    address: 'Em breve em Fortaleza, Ceará.',
     phone: null,
     email: null,
   },

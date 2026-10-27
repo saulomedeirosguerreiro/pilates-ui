@@ -7,6 +7,7 @@ import { Reveal } from '../components/motion/Reveal'
 import { Button, LinkButton } from '../components/ui/Button'
 import { Container } from '../components/ui/Container'
 import { DatePickerField } from '../components/ui/DatePickerField'
+import { PasswordField } from '../components/ui/PasswordField'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { pricingPlans } from '../content/pricing'
 
@@ -149,18 +150,16 @@ export function CadastroPage() {
             <Reveal as="fieldset" delay={0.05} className="flex flex-col gap-6">
               <SectionTitle index="02" title="Acesso à conta" />
               <div className="grid gap-6 sm:grid-cols-2">
-                <Field
+                <PasswordField
                   label="Senha"
                   name="senha"
-                  type="password"
                   autoComplete="new-password"
                   minLength={8}
                   required
                 />
-                <Field
+                <PasswordField
                   label="Confirmar senha"
                   name="confirmarSenha"
-                  type="password"
                   autoComplete="new-password"
                   minLength={8}
                   required
