@@ -6,6 +6,7 @@ import { SiteChrome } from '../components/layout/SiteChrome'
 import { Reveal } from '../components/motion/Reveal'
 import { Button, LinkButton } from '../components/ui/Button'
 import { Container } from '../components/ui/Container'
+import { DatePickerField } from '../components/ui/DatePickerField'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { pricingPlans } from '../content/pricing'
 
@@ -55,11 +56,18 @@ export function CadastroPage() {
 
   const [selectedPlan, setSelectedPlan] = useState(initialPlan)
   const [passwordError, setPasswordError] = useState<string | null>(null)
+  const [dateError, setDateError] = useState<string | null>(null)
   const [submitted, setSubmitted] = useState(false)
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const formData = new FormData(event.currentTarget)
+
+    if (!formData.get('nascimento')) {
+      setDateError('Selecione sua data de nascimento.')
+      return
+    }
+    setDateError(null)
 
     if (formData.get('senha') !== formData.get('confirmarSenha')) {
       setPasswordError('As senhas não coincidem.')
@@ -134,7 +142,7 @@ export function CadastroPage() {
                   placeholder="000.000.000-00"
                   required
                 />
-                <Field label="Data de nascimento" name="nascimento" type="date" optional />
+                <DatePickerField label="Data de nascimento" name="nascimento" error={dateError} />
               </div>
             </Reveal>
 
