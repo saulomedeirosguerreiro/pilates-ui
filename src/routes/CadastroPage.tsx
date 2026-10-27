@@ -1,7 +1,7 @@
 import { ChevronLeft } from 'lucide-react'
 import type { ComponentProps, FormEvent } from 'react'
 import { useState } from 'react'
-import { useSearchParams } from 'react-router'
+import { useNavigate, useSearchParams } from 'react-router'
 import { SiteChrome } from '../components/layout/SiteChrome'
 import { Reveal } from '../components/motion/Reveal'
 import { Button, LinkButton } from '../components/ui/Button'
@@ -49,6 +49,7 @@ function SectionTitle({
 }
 
 export function CadastroPage() {
+  const navigate = useNavigate()
   const [searchParams] = useSearchParams()
   const planFromQuery = searchParams.get('plano')
   const initialPlan = pricingPlans.some((plan) => plan.id === planFromQuery)
@@ -112,13 +113,14 @@ export function CadastroPage() {
         <Container className="flex flex-col gap-16">
           <div className="flex flex-col gap-6">
             <Reveal>
-              <a
-                href="/"
+              <button
+                type="button"
+                onClick={() => navigate(-1)}
                 className="text-brown-warm/70 hover:text-brown-deep inline-flex items-center gap-1.5 font-sans text-sm transition-colors motion-reduce:transition-none"
               >
                 <ChevronLeft aria-hidden="true" className="h-6 w-6" />
                 Voltar
-              </a>
+              </button>
             </Reveal>
 
             <SectionHeading
