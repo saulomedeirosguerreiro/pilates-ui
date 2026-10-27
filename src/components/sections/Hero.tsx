@@ -43,7 +43,7 @@ export function Hero() {
       <motion.div style={prefersReducedMotion ? undefined : { y: contentY, opacity: contentOpacity }}>
         <Container className="relative grid gap-10 lg:grid-cols-2 lg:items-end">
           <h1 className="text-off-white font-serif text-5xl leading-[1.05] text-balance sm:text-6xl lg:text-7xl">
-            <BlurText text={company.name} trigger="mount" stagger={0.08} />
+            <BlurText text={company.name} trigger="mount" stagger={0.08} layout="stacked" />
           </h1>
 
           <div className="flex flex-col gap-6">

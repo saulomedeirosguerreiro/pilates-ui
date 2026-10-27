@@ -11,6 +11,8 @@ type BlurTextProps = {
   delay?: number
   /** Dispara ao entrar na viewport (padrão) ou imediatamente ao montar (hero). */
   trigger?: 'inView' | 'mount'
+  /** 'stacked' coloca cada palavra em sua própria linha (ex.: wordmark do Hero). */
+  layout?: 'inline' | 'stacked'
 }
 
 /**
@@ -30,6 +32,7 @@ export function BlurText({
   stagger = 0.08,
   delay = 0,
   trigger = 'inView',
+  layout = 'inline',
 }: BlurTextProps) {
   const prefersReducedMotion = useReducedMotion()
   const words = text.split(' ')
@@ -48,8 +51,9 @@ export function BlurText({
   }
 
   return (
-    <Tag className={className}>
+    <Tag className={className} aria-label={text}>
       <motion.span
+        aria-hidden="true"
         initial="hidden"
         {...viewportProps}
         {...animateProps}
@@ -58,7 +62,7 @@ export function BlurText({
       >
         {words.flatMap((word, wordIndex) => {
           const wordEl = (
-            <span key={`word-${wordIndex}`} className="inline-block">
+            <span key={`word-${wordIndex}`} className={layout === 'stacked' ? 'block' : 'inline-block'}>
               {(splitBy === 'letter' ? word.split('') : [word]).map((unit, unitIndex) => (
                 <motion.span
                   key={unitIndex}
@@ -72,6 +76,7 @@ export function BlurText({
             </span>
           )
 
+          if (layout === 'stacked') return [wordEl]
           return wordIndex < words.length - 1 ? [wordEl, ' '] : [wordEl]
         })}
       </motion.span>
