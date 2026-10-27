@@ -20,6 +20,11 @@ export type SiteConfig = {
     terms: string | null
     privacyPolicy: string | null
   }
+  social: {
+    instagram: string | null
+    facebook: string | null
+    whatsapp: string | null
+  }
 }
 
 /**
@@ -46,5 +51,10 @@ export const siteConfig: SiteConfig = {
   links: {
     terms: null,
     privacyPolicy: null,
+  },
+  social: {
+    instagram: null,
+    facebook: null,
+    whatsapp: null,
   },
 }

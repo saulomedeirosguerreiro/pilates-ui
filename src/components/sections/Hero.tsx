@@ -1,42 +1,41 @@
 import { useSiteConfig } from '../../config/useSiteConfig'
+import heroImage from '../../assets/images/photos/hero.jpg'
 import { LinkButton } from '../ui/Button'
 import { Container } from '../ui/Container'
-import { PlaceholderImage } from '../ui/PlaceholderImage'
 
 export function Hero() {
-  const { campaign } = useSiteConfig()
+  const { company } = useSiteConfig()
 
   return (
-    <section id="inicio" className="relative pt-32 pb-20 sm:pt-40 sm:pb-28">
-      <Container className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
-        <div className="flex flex-col gap-6">
-          <h1 className="text-brown-deep font-serif text-4xl leading-tight text-balance sm:text-5xl lg:text-6xl">
-            Sua melhor versão
-            <br />
-            começa no movimento.
-          </h1>
+    <section id="inicio" className="relative flex min-h-screen items-end pb-20">
+      <img
+        src={heroImage}
+        alt="Pessoa praticando pilates em estúdio iluminado"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      <div className="from-brown-deep via-brown-deep/50 absolute inset-0 bg-gradient-to-t to-transparent" />
+      <div className="from-brown-deep/80 absolute inset-0 bg-gradient-to-r to-transparent" />
 
-          <p className="text-brown-warm/90 max-w-xl font-sans text-base text-pretty sm:text-lg">
-            Um espaço dedicado ao equilíbrio, à força e ao cuidado com o seu corpo. Descubra uma nova forma de
-            se movimentar, respeitando seu ritmo e suas necessidades.
+      <Container className="relative grid gap-10 lg:grid-cols-2 lg:items-end">
+        <h1 className="text-off-white font-serif text-5xl leading-[1.05] text-balance sm:text-6xl lg:text-7xl">
+          {company.name}
+        </h1>
+
+        <div className="flex flex-col gap-6">
+          <p className="text-off-white/80 max-w-md font-sans text-base text-pretty sm:text-lg">
+            Movimente-se com controle, ganhe força e encontre equilíbrio. Cada sessão é pensada para apoiar
+            seu corpo e o seu bem-estar.
           </p>
 
-          <div className="flex flex-wrap gap-4 pt-2">
-            <LinkButton variant="primary" href="#pre-venda">
-              Quero garantir minha vaga
+          <div className="flex flex-wrap gap-4">
+            <LinkButton variant="outlineLight" href="#planos">
+              Agendar Aula
             </LinkButton>
-            <LinkButton variant="secondary" href="#studio">
-              Conheça o Studio
+            <LinkButton variant="light" href="#planos">
+              Começar Agora ↗
             </LinkButton>
           </div>
-
-          <p className="text-brown-warm/70 pt-4 font-sans text-sm">
-            Pré-venda: mensalidade de R$ {campaign.pricePerMonthBRL} com preço garantido por{' '}
-            {campaign.priceLockMonths} meses, conforme as condições comerciais da oferta.
-          </p>
         </div>
-
-        <PlaceholderImage imageKey="hero" className="aspect-[4/5] w-full lg:aspect-[3/4]" />
       </Container>
     </section>
   )

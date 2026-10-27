@@ -1,12 +1,10 @@
 import { Footer } from '../components/layout/Footer'
 import { Header } from '../components/layout/Header'
-import { Benefits } from '../components/sections/Benefits'
-import { Faq } from '../components/sections/Faq'
-import { FinalCta } from '../components/sections/FinalCta'
+import { Classes } from '../components/sections/Classes'
 import { Hero } from '../components/sections/Hero'
-import { PreSaleOffer } from '../components/sections/PreSaleOffer'
-import { Services } from '../components/sections/Services'
-import { Studio } from '../components/sections/Studio'
+import { Instructors } from '../components/sections/Instructors'
+import { Pricing } from '../components/sections/Pricing'
+import { Testimonials } from '../components/sections/Testimonials'
 
 export function LandingPage() {
   return (
@@ -14,12 +12,10 @@ export function LandingPage() {
       <Header />
       <main>
         <Hero />
-        <Studio />
-        <Services />
-        <Benefits />
-        <PreSaleOffer />
-        <Faq />
-        <FinalCta />
+        <Classes />
+        <Instructors />
+        <Pricing />
+        <Testimonials />
       </main>
       <Footer />
     </>

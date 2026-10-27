@@ -6,7 +6,7 @@ describe('LandingPage', () => {
   it('renderiza a landing page sem lançar erro', () => {
     render(<LandingPage />)
 
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Sua melhor versão')
-    expect(screen.getAllByText(/Garantir minha vaga|Quero garantir minha vaga/i).length).toBeGreaterThan(0)
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Pilates Studio')
+    expect(screen.getAllByText(/Começar Agora|Começar →/i).length).toBeGreaterThan(0)
   })
 })
