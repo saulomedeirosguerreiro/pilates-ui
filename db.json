@@ -53,7 +53,7 @@
       "time": "09:00",
       "category": "grupo",
       "categoryLabel": "Aulas em Grupo",
-      "instructor": "Aldiceia Nascimento",
+      "instructor": "Aldiceia Alves",
       "location": "Estúdio — Unidade Centro",
       "status": "confirmed"
     },
@@ -75,7 +75,7 @@
       "time": "09:00",
       "category": "grupo",
       "categoryLabel": "Aulas em Grupo",
-      "instructor": "Aldiceia Nascimento",
+      "instructor": "Aldiceia Alves",
       "location": "Estúdio — Unidade Centro",
       "status": "confirmed"
     },
@@ -86,7 +86,7 @@
       "time": "09:00",
       "category": "grupo",
       "categoryLabel": "Aulas em Grupo",
-      "instructor": "Aldiceia Nascimento",
+      "instructor": "Aldiceia Alves",
       "status": "completed"
     },
     {
@@ -96,7 +96,7 @@
       "time": "09:00",
       "category": "grupo",
       "categoryLabel": "Aulas em Grupo",
-      "instructor": "Aldiceia Nascimento",
+      "instructor": "Aldiceia Alves",
       "status": "completed"
     },
     {
@@ -116,7 +116,7 @@
       "time": "09:00",
       "category": "grupo",
       "categoryLabel": "Aulas em Grupo",
-      "instructor": "Aldiceia Nascimento",
+      "instructor": "Aldiceia Alves",
       "status": "completed"
     }
   ],

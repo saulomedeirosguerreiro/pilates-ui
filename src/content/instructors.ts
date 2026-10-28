@@ -7,8 +7,8 @@ export type InstructorItem = {
 export const instructorsContent: InstructorItem[] = [
   {
     index: '01',
-    name: 'Aldiceia Nascimento',
-    imageAlt: 'Retrato da instrutora Aldiceia Nascimento em estúdio de pilates',
+    name: 'Aldiceia Alves',
+    imageAlt: 'Retrato da instrutora Aldiceia Alves em estúdio de pilates',
   },
   {
     index: '02',
