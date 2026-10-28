@@ -23,6 +23,7 @@ import { Container } from '../components/ui/Container'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { classesContent } from '../content/classes'
 import { instructorsContent } from '../content/instructors'
+import { AGE_RANGE_OPTIONS } from '../config/googleForm.config'
 import { useSiteConfig } from '../config/useSiteConfig'
 import { pricingPlans } from '../content/pricing'
 import { submitToGoogleForm } from '../lib/submitToGoogleForm'
@@ -358,6 +359,7 @@ export function PreLancamentoPage() {
         email: String(formData.get('email') ?? ''),
         telefone: String(formData.get('telefone') ?? ''),
         bairro: String(formData.get('bairro') ?? ''),
+        faixaEtaria: String(formData.get('faixaEtaria') ?? ''),
         plano: selectedPlan,
       })
       setSubmitted(true)
@@ -420,6 +422,9 @@ export function PreLancamentoPage() {
                   name="telefone"
                   type="tel"
                   autoComplete="tel"
+                  placeholder="(85) 91234-5678"
+                  pattern="^\(?\d{2}\)?\s?9?\d{4}-?\d{4}$"
+                  title="Digite o telefone com DDD, ex.: (85) 91234-5678"
                   required
                 />
                 <div className="flex flex-col gap-2 font-sans text-sm">
@@ -437,6 +442,19 @@ export function PreLancamentoPage() {
                     </span>
                   </div>
                 </div>
+                <label className="text-brown-deep flex flex-col gap-2 font-sans text-sm">
+                  <span className="font-medium">Faixa etária</span>
+                  <select name="faixaEtaria" required defaultValue="" className={inputClasses}>
+                    <option value="" disabled>
+                      Selecione
+                    </option>
+                    {AGE_RANGE_OPTIONS.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                </label>
               </div>
 
               <div className="bg-off-white border-brown-deep/15 flex items-center justify-between gap-4 rounded-2xl border p-4">
