@@ -480,9 +480,14 @@ export function PreLancamentoPage() {
                 </button>
               </div>
 
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-4">
                 <label className="text-brown-deep flex items-start gap-3 font-sans text-sm">
-                  <input type="checkbox" name="aceiteTermos" required className="mt-1" />
+                  <input
+                    type="checkbox"
+                    name="aceiteTermos"
+                    required
+                    className="accent-brown-deep mt-0.5 h-5 w-5 shrink-0"
+                  />
                   <span>
                     Li e aceito os{' '}
                     <a href="/termos" className="text-brown-deep underline hover:no-underline">
@@ -492,7 +497,12 @@ export function PreLancamentoPage() {
                   </span>
                 </label>
                 <label className="text-brown-deep flex items-start gap-3 font-sans text-sm">
-                  <input type="checkbox" name="aceitePrivacidade" required className="mt-1" />
+                  <input
+                    type="checkbox"
+                    name="aceitePrivacidade"
+                    required
+                    className="accent-brown-deep mt-0.5 h-5 w-5 shrink-0"
+                  />
                   <span>
                     Li e aceito a{' '}
                     <a href="/privacidade" className="text-brown-deep underline hover:no-underline">
