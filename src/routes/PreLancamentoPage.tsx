@@ -33,6 +33,9 @@ const inputClasses =
 
 const CLASS_IMAGES = [classFoundation, classPrivate, classGroup, classReformer]
 const INSTRUCTOR_IMAGES = [instructorAldiceia, instructorBruna]
+// As fotos são paisagem e recortadas em retrato — ajusta o foco horizontal
+// para manter cada instrutora enquadrada (Aldiceia aparece à esquerda da foto original).
+const INSTRUCTOR_IMAGE_POSITION = ['object-[20%_center]', 'object-center']
 
 function Field({
   label,
@@ -211,6 +214,7 @@ function InstructorsTeaser() {
                 hoverZoom
                 grayscale
                 className="absolute inset-0 h-full w-full"
+                imgClassName={INSTRUCTOR_IMAGE_POSITION[index]}
               />
               <div className="from-brown-deep/90 pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent" />
               <span className="bg-off-white/15 text-off-white absolute top-4 left-4 rounded-full px-3 py-1 font-sans text-xs font-medium backdrop-blur">
