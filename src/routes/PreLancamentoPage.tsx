@@ -45,7 +45,8 @@ function Field({
   return (
     <label className="text-brown-deep flex flex-col gap-2 font-sans text-sm">
       <span className="font-medium">
-        {label} {optional && <span className="text-brown-warm/50 font-normal">(opcional)</span>}
+        {label} {props.required && <span className="text-red-600">*</span>}
+        {optional && <span className="text-brown-warm/50 font-normal">(opcional)</span>}
       </span>
       <input className={inputClasses} {...props} />
     </label>
@@ -432,7 +433,9 @@ export function PreLancamentoPage() {
                   required
                 />
                 <div className="flex flex-col gap-2 font-sans text-sm">
-                  <span className="text-brown-deep font-medium">Bairro</span>
+                  <span className="text-brown-deep font-medium">
+                    Bairro <span className="text-red-600">*</span>
+                  </span>
                   <div className="flex gap-2">
                     <input
                       name="bairro"
@@ -447,7 +450,9 @@ export function PreLancamentoPage() {
                   </div>
                 </div>
                 <label className="text-brown-deep flex flex-col gap-2 font-sans text-sm">
-                  <span className="font-medium">Faixa etária</span>
+                  <span className="font-medium">
+                    Faixa etária <span className="text-red-600">*</span>
+                  </span>
                   <select name="faixaEtaria" required defaultValue="" className={inputClasses}>
                     <option value="" disabled>
                       Selecione
@@ -493,7 +498,7 @@ export function PreLancamentoPage() {
                     <a href="/termos" className="text-brown-deep underline hover:no-underline">
                       Termos de Uso
                     </a>
-                    .
+                    . <span className="text-red-600">*</span>
                   </span>
                 </label>
                 <label className="text-brown-deep flex items-start gap-3 font-sans text-sm">
@@ -508,18 +513,16 @@ export function PreLancamentoPage() {
                     <a href="/privacidade" className="text-brown-deep underline hover:no-underline">
                       Política de Privacidade
                     </a>
-                    .
+                    . <span className="text-red-600">*</span>
                   </span>
                 </label>
               </div>
 
               {submitError && <p className="font-sans text-sm text-red-700">{submitError}</p>}
 
-              <MagneticButton>
-                <Button type="submit" variant="primary" className="w-full" disabled={isSubmitting}>
-                  {isSubmitting ? 'Enviando...' : 'Entrar na lista de pré-lançamento'}
-                </Button>
-              </MagneticButton>
+              <Button type="submit" variant="primary" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? 'Enviando...' : 'Entrar na lista de pré-lançamento'}
+              </Button>
             </form>
           </Reveal>
         </Container>
