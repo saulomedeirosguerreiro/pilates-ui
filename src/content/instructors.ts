@@ -12,7 +12,7 @@ export const instructorsContent: InstructorItem[] = [
   },
   {
     index: '02',
-    name: 'Bruna Evelly',
-    imageAlt: 'Retrato da instrutora Bruna Evelly em estúdio de pilates',
+    name: 'Fernanda Costa',
+    imageAlt: 'Retrato da instrutora Fernanda Costa em estúdio de pilates',
   },
 ]
