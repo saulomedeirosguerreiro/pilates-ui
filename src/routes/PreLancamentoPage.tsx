@@ -126,7 +126,7 @@ function TrustBar() {
 
   const items = [
     { icon: Tag, text: `Preço de fundador travado por ${campaign.priceLockMonths} meses` },
-    { icon: Users, text: `Apenas ${campaign.seatLimit} vagas na turma de abertura` },
+    { icon: Users, text: 'Garanta sua vaga na turma de abertura' },
     { icon: MapPin, text: 'Em breve em Fortaleza, CE' },
   ]
 
