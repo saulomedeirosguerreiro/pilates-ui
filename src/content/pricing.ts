@@ -46,7 +46,7 @@ export const pricingPlans: PricingPlan[] = [
     name: 'Premium',
     description:
       'Uma experiência personalizada de Pilates individual e massoterapia para cuidar de você por completo.',
-    priceBRL: 599,
+    priceBRL: 499,
     highlighted: false,
     badge: null,
     features: [

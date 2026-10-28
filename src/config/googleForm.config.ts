@@ -19,7 +19,7 @@ export const GOOGLE_FORM_PLAN_LABELS: Record<string, string> = {
   equilibrio: 'Equilíbrio – R$ 300/mês (2 sessões de Pilates por semana em grupo)',
   'pilates-massoterapia':
     'Pilates + Massoterapia – R$ 399/mês (2xde Pilates/semana em grupo + 1 sessão de massoterapia por mês)',
-  premium: 'Premium – R$ 599/mês (2 sessões individuais de Pilates/semana + 2 sessões de massoterapia por mês)',
+  premium: 'Premium – R$ 499/mês (2 sessões individuais de Pilates/semana + 2 sessões de massoterapia por mês)',
 }
 
 /** Mesmas opções e mesma grafia (incluindo o travessão "–") cadastradas no Google Forms. */
