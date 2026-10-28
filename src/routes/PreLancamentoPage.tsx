@@ -218,6 +218,7 @@ function InstructorsTeaser() {
                 imgClassName={INSTRUCTOR_IMAGE_POSITION[index]}
               />
               <div className="from-brown-deep/90 pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent" />
+              <div className="from-brown-deep/60 pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b to-transparent" />
               <span className="bg-off-white/15 text-off-white absolute top-4 left-4 rounded-full px-3 py-1 font-sans text-xs font-medium backdrop-blur">
                 {instructor.name}
               </span>
