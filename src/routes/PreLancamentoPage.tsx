@@ -501,13 +501,6 @@ export function PreLancamentoPage() {
                     .
                   </span>
                 </label>
-                <label className="text-brown-deep flex items-start gap-3 font-sans text-sm">
-                  <input type="checkbox" name="aceitePromocional" className="mt-1" />
-                  <span>
-                    Aceito receber comunicações promocionais por e-mail e WhatsApp{' '}
-                    <span className="text-brown-warm/50">(opcional)</span>.
-                  </span>
-                </label>
               </div>
 
               {submitError && <p className="font-sans text-sm text-red-700">{submitError}</p>}
